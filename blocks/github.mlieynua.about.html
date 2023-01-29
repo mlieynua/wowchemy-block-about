@@ -19,7 +19,6 @@
   {{ $author = $block.content.username }}
 {{end}}
 
-{{ print $author }}
 {{ $person_page_path := (printf "/authors/%s" $author) }}
 {{ $person_page := site.GetPage $person_page_path }}
 {{ if not $person_page }}
