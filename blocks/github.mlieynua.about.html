@@ -19,6 +19,7 @@
   {{ $author = $block.content.username }}
 {{end}}
 
+{{ print $author }}
 {{ $person_page_path := (printf "/authors/%s" $author) }}
 {{ $person_page := site.GetPage $person_page_path }}
 {{ if not $person_page }}
@@ -27,6 +28,7 @@
 {{ $person := $person_page.Params }}
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "circle" }}
+
 
 <!-- About widget -->
 <div class="row">
